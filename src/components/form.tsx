@@ -57,8 +57,8 @@ export const FormComponent = () => {
     });
     }
     return (
-        <div className="flex gap-10 flex-row justify-between">
-            <form action={createRF} className="w-[700px] space-y-2">
+        <div className="flex gap-10 md:flex-row flex-col justify-between">
+            <form action={createRF} className="md:w-[700px]  space-y-2">
                 <InputBox disabled={isPending} name="grade" placeholder="Grade of the lesson Plan"/>
                 <InputBox disabled={isPending} name="subject" placeholder="Subject of the lesson Plan"/>
                 <InputBox disabled={isPending} name="Topic" placeholder="Topic of the lesson Plan"/>
