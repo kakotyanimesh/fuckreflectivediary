@@ -14,6 +14,11 @@ export const SignIN = () => {
             const password = formdata.get("password") as string
             const schoolName = formdata.get("schoolName") as string
 
+            if(!email || !password){
+                toast.error("Inputs are empty")
+                return
+            }
+
             const user = await signIn("credentials", {
                 email : email,
                 password : password,
@@ -30,7 +35,7 @@ export const SignIN = () => {
         })
     }
     return (
-        <form action={signin} className="flex flex-col w-[500px] space-y-5">
+        <form action={signin} className="flex flex-col md:w-[500px] w-[300px] space-y-5">
             <InputBox title="email" placeholder="email" name="email"/>
             <InputBox title="password" placeholder="password" name="password"/>
             <InputBox title="school Name" placeholder="school name" name="schoolName"/>
