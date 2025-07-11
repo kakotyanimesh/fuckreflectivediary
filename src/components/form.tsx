@@ -28,14 +28,14 @@ export const FormComponent = () => {
                     toast.error("SUBJECT , grade and topic is Empty")
                     return 
                 }
-                toast.message("creating lesson plan")
+                toast.message("creating Refletive diary")
 
                 
                 const data = await rfGeminicall({grade, subjectName, teaching_aids, topicName, classroomex, more , teachingmethods})
 
                 setRfdiary(data.text)
                 
-                toast.success("lesson plan created")
+                toast.success("Refletive diary created")
               } catch (error) {
                 toast.error(`${error}`)
                 
@@ -75,7 +75,7 @@ export const FormComponent = () => {
                     <h1 className="text-md ">Your Reflective diary </h1>
                     <button onClick={copytoclipboard}>{copied ? <ClipboardCheck /> : <Clipboard/>}</button>
                 </div>
-                <div className="py-5 px-7 prose max-w-none whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: rfdiary ?? "" }} />
+                <div className="py-5 px-7 prose max-w-none whitespace-pre-wrap h-[83vh] overflow-y-auto" dangerouslySetInnerHTML={{ __html: rfdiary ?? "" }} />
             </div>
         </div>
     )

@@ -11,19 +11,20 @@ export default auth((req) => {
     const publicRoutes = ["/"]
     const publicUrl = publicRoutes.includes(nextUrl.pathname)
 
-    if(IsSigninApi){
+    if(!IsSigninApi){
         return
     }
 
     if(publicUrl){
-        if(isLogged){
-            return Response.redirect(new URL("/dashboard", nextUrl))
-        }
-        return
+        // if(isLogged){
+        //     return Response.redirect(new URL("/dashboard", nextUrl))
+        // }
+        // no more signups as supabase db is deleted lol
+        return Response.redirect(new URL("/dashboard", nextUrl))
     }
 
     if(!isLogged){
-        return Response.redirect(new URL("/", nextUrl))
+        return Response.redirect(new URL("/dashboard", nextUrl));
     }
 })
 

@@ -1,4 +1,5 @@
 import { SignIN } from "@/components/signinPage";
+import Link from "next/link";
 
 export default function Home(){
   return (
@@ -13,7 +14,8 @@ export default function Home(){
         </h1>
         <p className="font-semibold italic bg-gradient-to-r from-blue-900 to-pink-600 text-white w-fit px-2 py-1 rounded-md -skew-1 justify-self-center">Use Predefined Prompts </p>
       </div>
-      <SignIN/>
+      {/* <SignIN/> */}
+      <Link href={"/dashboard"} className="bg-slate-900 disabled:cursor-none p-2 rounded-md font-semibold text-white w-fit">Just go to Dashboard</Link>
     </div>
   )
 }
